@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="stuff, to, help, search, engines, not" name="keywords">
+<meta content="What this page is about." name="description">
+<meta content="Display Webcam Stream" name="title">
+<title>Display Webcam Stream</title>
+  
+<style>
+
+#doc {
+    margin: 20px 40px;
+}
+
+.h1 {
+	font-face: Arial;
+	font-size: 20px;
+}
+
+#container {
+    margin: 0px auto;
+    
+	min-width: 1100px;
+}
+
+#video {
+    margin: 0px auto;
+    width: 500px;
+    height: 375px;
+	display: inline;
+}
+
+#camera {
+    margin: 0px auto;
+    width: 500px;
+    height: 375px;
+	display: inline;
+}
+
+#instructions {
+    margin: 0px;
+	border: 5px #333 solid;
+	width: 995px;
+}
+
+#videoElement {
+    width: 500px;
+    height: 375px;
+    background-color: #666;
+	
+	-webkit-transform: scaleX(-1);
+	transform: scaleX(-1);
+  
+}
+</style>
+</head>
+  
+<body>
+
+<div id="doc">
+	<h1>3-Stroke Motion</h1>
+
+	<div id="container">
+		<div id="video">
+			<object width="500" height="375">
+				<param name="movie" value="http://www.youtube.com/embed/uYNOWkB20wg?html5=1&amp;rel=0&amp;hl=en_US&amp;version=3"/>
+				<param name="allowFullScreen" value="true"/>
+				<param name="allowscriptaccess" value="always"/>
+				<embed width="500" height="375" src="http://www.youtube.com/embed/uYNOWkB20wg?html5=1&amp;rel=0&amp;hl=en_US&amp;version=3" class="youtube-player" type="text/html" allowscriptaccess="always" allowfullscreen="true"/>
+			</object>
+		</div>
+
+		<div id="camera">
+			<video autoplay="true" id="videoElement"></video>
+		</div>
+		
+	</div>
+
+	<div id="instructions">
+		<ul>
+			<li>  Review Throw-Up - Activate the opening of the WRIST Hinge. You'll need to recognize this POP in the following exercises.</li> 
+			<li>  Revew A/B motion: Activate Kick of the elbow. Relax on the windup.</li> 
+			<li>  Review: Stroke/Tap: Pay attention to how the windup/kick of the A/B motion is utilized here, and how the stick POPs at the end, just like in the Throw-Up exercise</li> 
+			<li>  Review: 3-Stroke Motion (Down-Tap-Up): https://youtu.be/uYNOWkB20wg</li> 
+			<li>  Review: "Pop and Drop" Sequence: https://youtu.be/QIYZymT0FZA. </li> 
+			<li>  NOTE: Both of the above exercises implement the Stroke/Tap combo, including the WINDUP/KICK of the elbow and the POP that comes at the end of the motion.</li> 
+		</ul>
+	</div>
+
+	</div>
+
+<script>
+ var video = document.querySelector("#videoElement");
+ 
+if (navigator.mediaDevices.getUserMedia) {       
+    navigator.mediaDevices.getUserMedia({video: true})
+  .then(function(stream) {
+    video.srcObject = stream;
+  })
+  .catch(function(err0r) {
+    console.log("Something went wrong!");
+  });
+}
+</script>
+</body>
+</html>
